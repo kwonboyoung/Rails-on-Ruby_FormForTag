@@ -1,0 +1,8 @@
+<h1>글쓰기</h1>
+<%= form_for(@tweet) do |f| %>
+<p>제목:<%= f.text_field :title  %></p>
+<p>내용:<%= f.text_field :content %></p>
+<p>사진업로드 : <%= f.file_field :photo_url %></p>
+<%= f.hidden_field :user_id, value: current_user.id%>
+<p><%= f.submit "글쓰기"%></p>
+<% end %>

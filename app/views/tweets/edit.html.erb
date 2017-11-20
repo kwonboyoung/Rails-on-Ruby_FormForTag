@@ -1,0 +1,7 @@
+<h1>수정하기</h1>
+<%= form_for(@tweet) do |f| %>
+<p>제목:<%= f.text_field :title, placeholdeer:@tweet.title %></p>
+<p>내용:<%= f.text_field :content, placeholdeer:@tweet.content %></p>
+
+<p><%= f.submit "글쓰기"%></p>
+<% end %>

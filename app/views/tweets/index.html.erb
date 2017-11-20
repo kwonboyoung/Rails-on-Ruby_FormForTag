@@ -1,0 +1,16 @@
+<h1>트윗 목록보기</h1>
+<% @tweets.each do |t| %>
+제목: <%= t.title%><br>
+내용: <%= t.content %><br>
+글쓴이 : <%= t.user.email if t.user %><br>
+
+<% if t.photo_url.size > 2 %>
+사진 : <%= image_tag "#{t.photo_url}",  height: '64', width: '64'  %><br>
+<!-- <p><%= t.photo_url %></p> -->
+<% end %>
+
+<%= link_to "보기",tweet_path(t.id) %><br>
+<%end%>
+<%=link_to "글쓰기" ,new_tweet_path %>
+
+<%= paginate @tweets %>
